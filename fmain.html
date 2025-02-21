@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      padding: 20px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+  <input type="text" id="name" placeholder="Enter your Name" required>
+  <input type="password" id="password" placeholder="Enter Password" required>
+  <input type="email" id="email" placeholder="Enter Email" required>
+  <input type="text" id="phone" placeholder="Enter Phone Number" required>
+  <button type="submit">Register</button>
+</form>
+
+<script>
+  function validateForm() {
+    // Get values from form fields
+    const name = document.getElementById("name").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    // Name validation: Only alphabets, minimum 6 characters
+    const namePattern = /^[A-Za-z]{6,}$/;
+    if (!namePattern.test(name)) {
+      alert("Name should only contain alphabets and be at least 6 characters long.");
+      return false;
+    }
+
+    // Password validation: At least 6 characters
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return false;
+    }
+
+    // Email validation: Standard email format
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address (e.g., name@domain.com).");
+      return false;
+    }
+
+    // Phone number validation: Exactly 10 digits
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+      alert("Phone number must be exactly 10 digits.");
+      return false;
+    }
+
+    // If all validations pass
+    alert("Registration Successful!");
+    return true;
+  }
+</script>
+
+</body>
+</html>

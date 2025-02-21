@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Web Page</title>
+  <style>
+    /* 🔤 Global Font & Page Background */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://via.placeholder.com/150'); /* Replace with your image URL */
+      background-repeat: repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      cursor: crosshair; /* Customized cursor */
+    }
+
+    /* 🎨 Different Font Styles for Sections */
+    h1 {
+      font-family: 'Georgia', serif;
+      color: navy;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    p {
+      font-family: 'Courier New', monospace;
+      font-size: 18px;
+      color: darkslategray;
+      padding: 10px;
+    }
+
+    /* 🔗 Link Styles */
+    a:link {
+      text-decoration: none;
+      color: blue;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: purple;
+    }
+
+    a:active {
+      text-decoration: none;
+      color: green;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: red;
+    }
+
+    /* 🖼️ Background Image for Single Elements */
+    .box {
+      background-image: url('https://via.placeholder.com/100');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      padding: 20px;
+      border: 2px solid #333;
+      margin: 20px;
+    }
+
+    /* 📐 Layered Elements */
+    .layer1 {
+      position: relative;
+      font-size: 50px;
+      z-index: 2;
+      color: black;
+    }
+
+    .layer2 {
+      position: relative;
+      top: -50px;
+      left: 5px;
+      font-size: 80px;
+      z-index: 3;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stylish Web Page with CSS</h1>
+
+  <p>Welcome to a simple webpage that demonstrates various CSS features like fonts, backgrounds, links, and layers.</p>
+
+  <!-- 🔗 Example Links -->
+  <p>Check out my <a href="#">Portfolio</a> or visit my <a href="#">GitHub</a> profile.</p>
+
+  <!-- 🖼️ Single Element Background Image -->
+  <div class="box">
+    This box has its own background image.
+  </div>
+
+  <!-- 📐 Layered Elements -->
+  <div class="layer1">LAYER 1 (Bottom)</div>
+  <div class="layer2">LAYER 2 (On Top)</div>
+</body>
+</html>
